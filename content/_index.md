@@ -24,7 +24,7 @@ chapter: false
 
 &emsp; **Class:** 
 
-![Your profile picture](static/images/Giang.jpg)
+![profile picture](/images/Giang.png)
 
 ### Report Content
 
