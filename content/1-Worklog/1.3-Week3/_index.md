@@ -18,40 +18,16 @@ pre: " <b> 1.3. </b> "
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - VPN Site-to-Site Connection <br>&emsp; + Concept: Hybrid model connecting Data Center to AWS VPC <br>&emsp; + Components: Virtual Private Gateway (AWS side) & Customer Gateway (Client side) <br>&emsp; + Understanding connectivity across different IP ranges <br>                                                                                                   | 22/09/2025 | 22/09/2025      |    <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - VPN Client-to-Site & Direct Connect <br>&emsp;  + Client-to-Site: Use cases and AWS Marketplace solutions (e.g., Cisco Meraki)  <br>&emsp; + AWS Direct Connect: Benefits (Low latency 20-30ms) <br>&emsp; + Differentiating Hosted Connections (via Partners like Viettel, FPT) vs. Dedicated Connections <br>                                   | 23/09/2025 | 23/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Elastic Load Balancing (ELB) Fundamentals <br>&emsp;  + Concept: Managed service for traffic distribution (EC2/Containers)  <br>&emsp; + Key Features: Health checks & Access Logs (S3 integration) <br>&emsp; + Sticky Session: Concept and importance for maintaining user state <br> | 24/09/2025 | 24/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Application Load Balancer (ALB) & Network Load Balancer (NLB) <br>&emsp; + ALB (Layer 7): HTTP/HTTPS protocols and Path-based routing (/mobile vs /desktop) <br>&emsp; + NLB (Layer 4): TCP/TLS protocols, Static IP support, and High performance handling <br>&emsp;    <br>                            | 24/09/2025 | 24/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Other Load Balancers & Review <br>&emsp; + Classic Load Balancer (CLB - Layer 4/7) overview <br>&emsp; + Gateway Load Balancer (GLB - Layer 3) & GENEVE protocol <br>&emsp; + Review: Compare VPN vs. Direct Connect & ALB vs. NLB                      | 25/09/2025 | 25/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 3 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Hybrid Connectivity Mastery: Understood how to connect Data Centers to AWS using Site-to-Site VPN (Virtual Private Gateway) or AWS Direct Connect (low latency, 20-30ms).
+* VPN Strategy: Differentiated between Site-to-Site (infrastructure connecting) and Client-to-Site VPN (user access) use cases.
+* ELB Proficiency: Distinguished between Application Load Balancer (Layer 7, path-based routing) and Network Load Balancer (Layer 4, static IP support, high performance).
+* Traffic Management: Learned to use Sticky Sessions to maintain user state and Health Checks to ensure system reliability.

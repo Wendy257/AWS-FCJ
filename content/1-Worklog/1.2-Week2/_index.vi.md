@@ -16,11 +16,11 @@ pre: " <b> 1.2. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Công cụ quản lí AWS services  <br>&emsp; +   AWS Management Console - Root Login                                                                                                | 15/09/2025 | 15/09/2025      |    <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Tối ưu hóa chi phí trên AWS <br>&emsp; + Saving plan <br>&emsp; + Spot <br>&emsp; + AWS Budget <br>                                              | 16/09/2025 | 16/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Làm việc với AWS support <br>&emsp; + Basic <br>&emsp; + Developer <br> &emsp; + Business <br> &emsp;  +	Enterprise <br>  | 17/09/2025 | 17/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Amazon VPC <br>&emsp; + Khái niệm và Tính chất <br> &emsp; + Subnet <br> &emsp; + Route table   <br>                            | 18/09/2025 | 18/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; Cấu hình Site to Site VPN <br>                                                                                     | 19/09/2025 | 19/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Công cụ quản lí AWS services  <br>&emsp; +   AWS Management Console - Root Login                                                                                                | 15/09/2025 | 15/09/2025      |    <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tối ưu hóa chi phí trên AWS <br>&emsp; + Saving plan <br>&emsp; + Spot <br>&emsp; + AWS Budget <br>                                              | 16/09/2025 | 16/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Làm việc với AWS support <br>&emsp; + Basic <br>&emsp; + Developer <br> &emsp; + Business <br> &emsp;  +	Enterprise <br>  | 17/09/2025 | 17/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Amazon VPC <br>&emsp; + Khái niệm và Tính chất <br> &emsp; + Subnet <br> &emsp; + Route table   <br>                            | 18/09/2025 | 18/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; Cấu hình Site to Site VPN <br>                                                                                     | 19/09/2025 | 19/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 2:
