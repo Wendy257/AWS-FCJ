@@ -1,58 +1,28 @@
 ---
-title: "Worklog Tuần 6"
- 
-weight: 1
+title: "Week 6 Worklog"
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 6:
 
-### Mục tiêu tuần 6:
+* **Cơ sở dữ liệu NoSQL (DynamoDB):** Hiểu về Table, Item, Attribute, và Primary Key (Partition vs Composite).
+* **Caching:** Giới thiệu về ElastiCache (Redis/Memcached) để tăng hiệu năng.
+* **Di chuyển Database:** Tổng quan về DMS (Database Migration Service).
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 1 | - Dịch blogs  | 08/10/2025 | 08/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - Tính sẵn sàng cao của RDS (Multi-AZ vs Read Replicas) <br> - **Thực hành:** <br>&emsp; + Mô phỏng failover (lý thuyết hoặc lab) | 09/10/2025 | 09/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Nền tảng Amazon DynamoDB <br> - **Thực hành:** <br>&emsp; + Tạo bảng DynamoDB <br>&emsp; + Put và Get item bằng AWS CLI | 10/10/2025 | 10/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - ElastiCache & DAX (DynamoDB Accelerator) <br> - Học các use case cho chiến lược caching | 11/10/2025 | 11/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - So sánh RDS vs. DynamoDB vs. Redshift <br> - Ôn tập Lab Database tuần này | 12/10/2025 | 12/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Kết quả đạt được trong Tuần 6:
 
-
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Triển khai Cơ sở dữ liệu Quan hệ được quản lý (RDS) và thiết lập kết nối an toàn từ EC2 instance.
+* Tạo bảng NoSQL DynamoDB và thực hiện các thao tác CRUD cơ bản.
+* Hiểu sự khác biệt kiến trúc giữa Multi-AZ (cho phục hồi thảm họa) và Read Replicas (cho mở rộng đọc).
+* Biết khi nào nên chọn NoSQL thay vì CSDL Quan hệ dựa trên tính linh hoạt của schema và nhu cầu mở rộng.

@@ -1,59 +1,29 @@
 ---
-title: "Worklog Tuần 8"
- 
-weight: 1
+title: "Week 8 Worklog"
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 8:
 
-### Mục tiêu tuần 8:
+* **Container hóa:** Hiểu các nguyên tắc cơ bản của Docker và đóng gói ứng dụng thành container.
+* **Điều phối Container:** Làm chủ Amazon ECS (Elastic Container Service) để quản lý các tải công việc được container hóa.
+* **Serverless Containers:** Sử dụng AWS Fargate để chạy container mà không cần quản lý máy chủ.
+* **Quản lý Registry:** Lưu trữ và quản lý các container image sử dụng Amazon ECR (Elastic Container Registry).
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 1 | - Cơ bản về Docker <br> - **Thực hành:** <br>&emsp; + Cài đặt Docker <br>&emsp; + Build một Docker image cho ứng dụng backend đơn giản (Python/Node.js) | 20/10/2025 | 20/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - Amazon ECR (Elastic Container Registry) <br> - **Thực hành:** <br>&emsp; + Tạo repository trong ECR <br>&emsp; + Push Docker image từ máy local lên ECR | 21/10/2025 | 21/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Các khái niệm Amazon ECS (Elastic Container Service) <br> - **Thực hành:** <br>&emsp; + Định nghĩa Task Definitions <br>&emsp; + Tạo một ECS Cluster | 22/10/2025 | 22/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - AWS Fargate so với EC2 Launch Type <br> - **Thực hành:** <br>&emsp; + Khởi chạy một Fargate task sử dụng image từ ECR <br>&emsp; + Public service thông qua Load Balancer | 23/10/2025 | 23/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Khởi động Dự án Nhóm (Backend):** <br>&emsp; + Định nghĩa kiến trúc Backend cho "Web bán trang sức" <br>&emsp; + Chọn Tech Stack (ví dụ: Express.js/Django chạy trên ECS hoặc Lambda) | 24/10/2025 | 24/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Kết quả đạt được trong Tuần 8:
 
-
-### Kết quả đạt được tuần 8:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Đóng gói thành công ứng dụng backend sử dụng Docker.
+* Thiết lập kho lưu trữ container riêng tư trên AWS ECR và quản lý các phiên bản image.
+* Triển khai dịch vụ container có tính sẵn sàng cao sử dụng Amazon ECS và Fargate.
+* Xác định kiến trúc backend ban đầu cho dự án Cửa hàng Trang sức (Quyết định chọn Microservices hay Monolith).

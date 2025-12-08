@@ -1,57 +1,29 @@
 ---
 title: "Week 12 Worklog"
- 
-weight: 2
+weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 12 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* **Final Deployment:** Deploy the production-ready backend for the Jewelry Store.
+* **Content Delivery:** Accelerate API and content delivery using Amazon CloudFront.
+* **DNS Management:** Configure custom domain names using Amazon Route 53.
+* **Final Project Showcase:** Prepare the backend infrastructure for the final demo.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 1 | - Amazon Route 53 & CloudFront <br> - **Practice:** <br>&emsp; + Configure Route 53 for a custom domain (if available) <br>&emsp; + Setup CloudFront distribution for S3 images and API acceleration | 17/11/2025 | 17/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - **Team Project:** Production Deployment <br> - **Practice:** <br>&emsp; + Trigger the "Release" pipeline in CodePipeline <br>&emsp; + Verify production environment stability | 18/11/2025 | 18/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - **Team Project:** Load Testing & Auto Scaling Verification <br> - **Practice:** <br>&emsp; + Simulate traffic to test Auto Scaling policies <br>&emsp; + Monitor error rates in CloudWatch | 19/11/2025 | 19/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - **Team Project:** Integration Testing (Backend + Frontend) <br> - **Practice:** <br>&emsp; + Support frontend team in final integration <br>&emsp; + Fix last-minute bugs | 20/11/2025 | 20/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Final Project Presentation:** <br>&emsp; + Prepare architecture diagrams (Backend focus) <br>&emsp; + Demonstrate API functionality and CI/CD workflow | 21/11/2025 | 21/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
 ### Week 12 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Successfully deployed the Jewelry Web Sale backend to a production environment.
+* Configured CloudFront CDN to reduce latency for global users accessing product images.
+* Validated system reliability through load testing and verified Auto Scaling capabilities.
+* Completed the integration with the frontend and delivered a fully functional e-commerce project.

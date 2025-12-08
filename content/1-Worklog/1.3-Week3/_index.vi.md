@@ -9,48 +9,25 @@ pre: " <b> 1.3. </b> "
 
 ### Mục tiêu tuần 3:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
+* Phân biệt các trường hợp sử dụng Site-to-Site VPN và Client-to-Site VPN.
+* Mô tả lợi ích, các thành phần (Hosted/Dedicated Connections) và độ trễ của AWS Direct Connect.
+* Xác định chức năng của ELB như một dịch vụ được quản lý để phân phối lưu lượng và kiểm tra tình trạng (health checking).
+* Nhận biết rằng NLB hỗ trợ IP tĩnh và hiệu năng cao, trong khi ALB hỗ trợ định tuyến dựa trên đường dẫn (path-based routing).
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | - Kết nối VPN Site-to-Site <br>&emsp; + Khái niệm: Mô hình lai kết nối Data Center với AWS VPC <br>&emsp; + Thành phần: Virtual Private Gateway (phía AWS) & Customer Gateway (phía Khách hàng) <br>&emsp; + Hiểu về khả năng kết nối giữa các dải IP khác nhau | 22/09/2025 | 22/09/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - VPN Client-to-Site & Direct Connect <br>&emsp; + Client-to-Site: Các trường hợp sử dụng và giải pháp trên AWS Marketplace (vd: Cisco Meraki) <br>&emsp; + AWS Direct Connect: Lợi ích (Độ trễ thấp 20-30ms) <br>&emsp; + Phân biệt Hosted Connections (qua các đối tác như Viettel, FPT) với Dedicated Connections | 23/09/2025 | 23/09/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Cơ bản về Elastic Load Balancing (ELB) <br>&emsp; + Khái niệm: Dịch vụ được quản lý để phân phối lưu lượng (EC2/Containers) <br>&emsp; + Tính năng chính: Health checks & Access Logs (tích hợp S3) <br>&emsp; + Sticky Session: Khái niệm và tầm quan trọng trong việc duy trì trạng thái người dùng | 24/09/2025 | 24/09/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Application Load Balancer (ALB) & Network Load Balancer (NLB) <br>&emsp; + ALB (Layer 7): Giao thức HTTP/HTTPS và định tuyến theo đường dẫn (/mobile vs /desktop) <br>&emsp; + NLB (Layer 4): Giao thức TCP/TLS, hỗ trợ IP tĩnh và xử lý hiệu năng cao | 24/09/2025 | 24/09/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Các Load Balancer khác & Ôn tập <br>&emsp; + Tổng quan Classic Load Balancer (CLB - Layer 4/7) <br>&emsp; + Gateway Load Balancer (GLB - Layer 3) & giao thức GENEVE <br>&emsp; + Ôn tập: So sánh VPN vs. Direct Connect & ALB vs. NLB | 25/09/2025 | 25/09/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 3:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Làm chủ Kết nối Lai (Hybrid Connectivity Mastery):Hiểu cách kết nối Data Center với AWS sử dụng Site-to-Site VPN (Virtual Private Gateway) hoặc AWS Direct Connect (độ trễ thấp, 20-30ms).
+* Chiến lược VPN (VPN Strategy): Phân biệt được các trường hợp sử dụng Site-to-Site (kết nối hạ tầng) và Client-to-Site VPN (người dùng truy cập).
+* Thành thạo ELB (ELB Proficiency): Phân biệt giữa Application Load Balancer (Layer 7, định tuyến theo đường dẫn) và Network Load Balancer (Layer 4, hỗ trợ IP tĩnh, hiệu năng cao).
+* Quản lý Lưu lượng (Traffic Management): Biết cách sử dụng Sticky Sessions để duy trì trạng thái người dùng và Health Checks để đảm bảo độ tin cậy của hệ thống.
 
 

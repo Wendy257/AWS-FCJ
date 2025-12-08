@@ -1,59 +1,29 @@
 ---
-title: "Worklog Tuần 5"
- 
-weight: 1
+title: "Week 5 Worklog"
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 5:
 
-### Mục tiêu tuần 5:
+* **Lưu trữ Đối tượng (S3):** Nắm vững các lớp lưu trữ S3 (Standard, IA, Glacier), Chính sách vòng đời (Lifecycle), và Phiên bản (Versioning).
+* **Lưu trữ Tệp (EFS):** Cấu hình Elastic File System để chia sẻ lưu trữ giữa nhiều EC2 instance.
+* **Lưu trữ Lai (Hybrid):** Hiểu các khái niệm Storage Gateway (File, Volume, Tape Gateways).
+* **Lưu trữ Web Tĩnh:** Triển khai một trang web tĩnh sử dụng S3.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 1 | - Cơ bản về S3 & Bảo mật (Bucket Policies) <br> - **Thực hành:** <br>&emsp; + Tạo S3 bucket & upload đối tượng <br>&emsp; + Cấu hình chặn truy cập công khai (Block Public Access) | 03/10/2025 | 03/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - S3 Versioning & Quy tắc Lifecycle <br> - **Thực hành:** <br>&emsp; + Bật tính năng versioning <br>&emsp; + Tạo quy tắc lifecycle chuyển dữ liệu sang Glacier | 04/10/2025 | 04/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Host Website tĩnh trên S3 <br> - **Thực hành:** <br>&emsp; + Host trang HTML/CSS tĩnh trên S3 <br>&emsp; + Cấu hình bucket policy cụ thể cho truy cập web | 05/10/2025 | 05/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Elastic File System (EFS) <br> - **Thực hành:** <br>&emsp; + Tạo EFS File System <br>&emsp; + Mount EFS vào hai Linux instance khác nhau cùng lúc | 06/10/2025 | 06/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Tổng quan Storage Gateway & Snow Family <br> - Ôn tập Lab Lưu trữ tuần này | 07/10/2025 | 07/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Kết quả đạt được trong Tuần 5:
 
-
-### Kết quả đạt được tuần 5:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Cấu hình S3 bucket với Versioning và Lifecycle policies để đảm bảo độ bền dữ liệu và tối ưu chi phí.
+* Host một website tĩnh hoàn chỉnh trên S3 mà không cần quản lý máy chủ.
+* Triển khai lưu trữ tệp chia sẻ bằng EFS, xác minh khả năng đọc/ghi đồng thời từ nhiều instance.
+* Bảo mật dữ liệu S3 sử dụng Bucket Policy và Block Public Access.

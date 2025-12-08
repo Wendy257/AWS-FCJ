@@ -5,122 +5,93 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+# Zupee implements Amazon Neptune to detect Wallet transaction anomalies in real time
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+*This is a guest post by Aman Kumar Bahl, leader of Data Engineering, and Apoorv Mathur, Lead Data Engineer, at Zupee, in partnership with AWS.*
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+Zupee is a leading skill-based gaming platform offering casual and board games and is one of the fastest growing real money gaming platforms in India. Users can play multiple skill-based games online and win prizes.
 
----
+Zupee offers both *free-to-play* and *pay-to-play* game formats. For paid games, users have to deposit money in their app wallet. Zupee runs user incentive programs that help users to gain rewards, refer friends, or increase engagement. To maintain the integrity of incentive programs, they wanted to understand user behaviors on the platform and deter the users who display suspicious transaction patterns.
 
-## Architecture Guidance
+In this post, we show you how Zupee integrated Amazon Neptune Database to detect anomalies in real time for wallet transactions by creating a system for tracing the complex relationships between users, devices, and wallet transactions metadata.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
-
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
-
-**The solution architecture is now as follows:**
-
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+Amazon Neptune is a fully managed graph database service built for the cloud that makes it easier to build and run graph applications that work with highly connected datasets. Neptune is optimized for storing billions of relationships and querying the graph with milliseconds latency, and supports the popular graph query languages Apache TinkerPop Gremlin, the W3C’s SPARQL, and openCypher. Neptune provides built-in security, continuous backups, serverless compute, and integrations with other AWS services. Neptune supports in-place upgrades of cluster and database instances. Amazon Neptune Analytics is a high-performance analytics engine designed to extract insights and detect patterns in vast amounts of graph data stored in Amazon Simple Storage Service (Amazon S3) or Amazon Neptune Database.
 
 ---
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+## Solution overview
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+Initially, Zupee developed its solution with a basic design, using a relational database to store data. This approach facilitated the identification of connected users based on various attributes, enabling the determination of whether a user’s transaction was legitimate or not. The system’s limitations became apparent when processing millions of transactions across an expanding user base with multiple correlation attributes, necessitating a more robust solution. The inherently interconnected nature of the data, where users could be linked through multiple attributes and complex relationships, made it increasingly difficult to efficiently query and analyze these connections using traditional relational database structures. The need to traverse and explore these intricate relationships in real time led Zupee to consider a graph-based approach, which is inherently designed to handle highly connected data and complex relationship queries more efficiently.
+
+Graph databases excel at managing diverse entities with intricate, interconnected relationships. Unlike traditional relational databases, which require complex multi-level table joins for querying data across multiple connections, graph databases allow for efficient traversal of these relationships without predefined join operations. This capability enables the exploration of data through multiple hops and transformations with minimal restrictions. As a result, graph databases can execute complex queries across numerous interconnected data points and return results in milliseconds. This performance advantage is particularly valuable when dealing with highly connected data sets where the relationships between entities are numerous and the optimal query paths might not be known in advance. By representing data as a network of nodes and edges, graph databases provide a more intuitive and flexible approach to storing and querying interconnected information, making them ideal for scenarios where relationship analysis is crucial.
+
+Graph databases excel at managing and accessing interconnected data through their specialized design. They store information as nodes (representing entities) and edges (representing relationships), enabling efficient exploration of the intricate web of connections.
 
 ---
 
-## Technology Choices and Communication Scope
+### Building on Neptune
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+Zupee stores the required model features in Neptune and uses those features to create clusters of users and monitor wallet transactions. Zupee started by processing over 1 million wallet transactions per day in real time. For confidentiality reasons, we only include placeholder names in the attributes, but you can think of several attributes belonging to users doing transactions on the Zupee platform. The transactions that have common attributes and patterns similar to known suspicious transactions are flagged as anomalies. This forms the root of Zupee’s integrity system meant to protect the overall user base and incentive programs.
+The following image depicts a graph data model used by Zupee in a Neptune Graph database. It models relationships between users, devices, transactions, and payment instruments.
 
----
+![pic1](/images/zupee1.png)
 
-## The Pub/Sub Hub
+The central User node:
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+Connects to **Device_Token** for device logins
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+Connects to **Transaction** for creating and transferring transactions
 
----
+Connects to **Payment_Instrument** for payment methods
 
-## Core Microservice
+Connects to **User_Profile** for user profiles
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+This flexible graph structure enables efficient data management and querying across various entities and their interconnections within Zupee’s platform.
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+Zupee looked for a graph-based database and built a small proof of concept. The results were surprisingly good in terms of the information Zupee could derive from the graph model. Using the graph model, they immediately found user associations that they weren’t aware of.
 
----
+The following diagram represents a graph database structure, where nodes (circles) correspond to data entities or vertices, and edges (lines) depict relationships or connections between those entities.
 
-## Front Door Microservice
+![pic2](/images/zupee2.png)
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+The red nodes symbolize individual data records or documents, while the blue nodes represent consolidated views or indices linking related data. The radial clustering patterns suggest a distribution of data organized around specific relationship types or domains. This visual representation aids in understanding the inherent connectivity and complex associations within a graph database, which excels at efficiently storing and querying highly interconnected data structures compared to traditional tabular databases.
 
----
+Zupee used the Union Find algorithm to efficiently create distinct subgraphs (groups) of entities on their platform, based on the relationships or associations between them. This approach helped them handle pseudo associations and use a combination of data models for identifying them without having to model every single relation explicitly in a graph database such as Neptune.
 
-## Staging ER7 Microservice
+Using this approach, Zupee was able to develop a service that was capable of grouping associations together and look for disjointed subgroups of entities, enabling them to discover complex and undiscovered associations.
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
+The solution architecture—shown in the following figure—implements real-time fraudulent transaction detection.
+
+![pic3](/images/zupee3.png)
+
+User transactions are processed through an Amazon API Gateway, which then passes the transactions to AWS Lambda for processing. The transaction data, including attributes such as Device_Token and Payment_Instrument, is stored in Neptune. AWS Global Accelerator is used to optimize network performance, and Network Load Balancer distributes the workload across the pool of game servers, which render the game.
+
+Neptune’s graph structure enables Zupee to:
+
+Identify suspicious patterns by analyzing relationships between user profiles, payment instruments, and device tokens
+Detect duplicate accounts by finding connected components in the user transaction graph
+Discover shared payment instruments (UPI/VPA IDs) across multiple accounts
+Calculate appropriate incentive values based on user authenticity
+For pay-to-play game formats, when users add money to their wallet, the system queries Neptune to fetch relevant subgraph showing user associations. This helps determine if the user is legitimate or potentially using multiple accounts. Based on this analysis:
+
+Legitimate users with no suspicious connections receive full incentive benefits
+Accounts with detected anomalies receive adjusted or no incentives
+Shared payment instruments across accounts trigger reduced incentive amounts
+This systematic approach helps Zupee optimize costs by ensuring incentives are primarily given to genuine users while protecting against potential misuse through duplicate accounts or shared payment methods.
 
 ---
 
-## New Features in the Solution
+## Summary
 
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+By using Amazon Neptune, Zupee has accomplished a remarkable response time of less than 50 milliseconds in optimal conditions, facilitating real-time anomaly detection and enabling the team to swiftly implement corrective measures of incentive distribution to legitimate users. Currently, Zupee oversees an expansive connected data network encompassing over 5 million nodes and edges. The company has developed the capability to dynamically search for entities and identify connected nodes in real time.
+
+---
+
+### About the author
+
+**Aman Kumar Bahl** is the leader of Data Engineering at Zupee, Aman is entrusted with steering the technological backbone that fuels the organisation’s data-driven ecosystem. He exhibits a holistic approach in crafting data intensive applications aimed at empowering business scalability.
+
+**Apoorv Mathur** is a Lead Data Engineer at Zupee, responsible for the design and architecture of the organization’s data systems. He drives the adoption of new technologies, enabling real-time analytics and enhancing the data infrastructure.
+
+**Ajeet Dubey** is a seasoned Solutions Architect at AWS, with over 13 years of expertise in designing and implementing resilient, scalable cloud solutions. His specialization lies in developing end-to-end cloud-focused machine learning and generative AI solutions.

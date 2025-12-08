@@ -1,59 +1,29 @@
 ---
-title: "Worklog Tuần 9"
- 
-weight: 1
+title: "Week 9 Worklog"
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 9:
 
-### Mục tiêu tuần 9:
+* **Nền tảng CI/CD:** Hiểu về các đường ống Tích hợp liên tục (CI) và Triển khai liên tục (CD).
+* **Quản lý mã nguồn:** Sử dụng AWS CodeCommit (hoặc tích hợp GitHub) để kiểm soát phiên bản.
+* **Tự động hóa Build:** Cấu hình AWS CodeBuild để biên dịch mã và chạy kiểm thử.
+* **Tự động hóa Triển khai:** Sử dụng AWS CodeDeploy để tự động phát hành lên các dịch vụ tính toán.
+* **Điều phối đường ống:** Kết nối mọi thứ với AWS CodePipeline.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 1 | - Giới thiệu về AWS Code Services (CodeCommit) <br> - **Thực hành:** <br>&emsp; + Thiết lập repository cho Backend dự án Trang sức <br>&emsp; + Push bộ khung code (skeleton) ban đầu | 27/10/2025 | 27/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - AWS CodeBuild <br> - **Thực hành:** <br>&emsp; + Tạo file `buildspec.yml` <br>&emsp; + Chạy job build để cài đặt dependencies và chạy unit tests | 28/10/2025 | 28/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - AWS CodeDeploy <br> - **Thực hành:** <br>&emsp; + Tạo file `appspec.yml` <br>&emsp; + Triển khai một bản sửa đổi lên EC2 test hoặc Lambda | 29/10/2025 | 29/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - AWS CodePipeline <br> - **Thực hành:** <br>&emsp; + Tạo pipeline kích hoạt khi có Git push -> Build -> Deploy | 30/10/2025 | 30/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Dự án Nhóm (Backend):** <br>&emsp; + Khởi tạo đường ống CI/CD cho API Trang sức <br>&emsp; + Đảm bảo mọi commit đều kích hoạt kiểm tra build | 31/10/2025 | 31/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Kết quả đạt được trong Tuần 9:
 
-
-### Kết quả đạt được tuần 9:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thiết lập đường ống CI/CD hoàn toàn tự động cho phát triển backend.
+* Tích hợp quản lý mã nguồn với hệ thống build và deploy để giảm thiểu lỗi thủ công.
+* Cấu hình kiểm thử tự động trong giai đoạn build để đảm bảo chất lượng code cho dự án nhóm.

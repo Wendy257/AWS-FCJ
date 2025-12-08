@@ -1,58 +1,29 @@
 ---
-title: "Worklog Tuần 12"
- 
-weight: 2
+title: "Week 12 Worklog"
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-### Mục tiêu tuần 12:
+### Mục tiêu Tuần 12:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* **Triển khai cuối cùng:** Triển khai backend đã sẵn sàng cho production (sản xuất) cho Cửa hàng Trang sức.
+* **Phân phối nội dung:** Tăng tốc API và phân phối nội dung sử dụng Amazon CloudFront.
+* **Quản lý DNS:** Cấu hình tên miền tùy chỉnh sử dụng Amazon Route 53.
+* **Trình diễn dự án cuối khóa:** Chuẩn bị hạ tầng backend cho buổi demo cuối cùng.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 1 | - Amazon Route 53 & CloudFront <br> - **Thực hành:** <br>&emsp; + Cấu hình Route 53 cho tên miền tùy chỉnh (nếu có) <br>&emsp; + Thiết lập CloudFront distribution cho ảnh S3 và tăng tốc API | 17/11/2025 | 17/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - **Dự án Nhóm:** Triển khai Production <br> - **Thực hành:** <br>&emsp; + Kích hoạt đường ống "Release" trong CodePipeline <br>&emsp; + Xác minh tính ổn định của môi trường production | 18/11/2025 | 18/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - **Dự án Nhóm:** Kiểm thử tải & Xác minh Auto Scaling <br> - **Thực hành:** <br>&emsp; + Giả lập lưu lượng truy cập để test chính sách Auto Scaling <br>&emsp; + Giám sát tỷ lệ lỗi trong CloudWatch | 19/11/2025 | 19/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - **Dự án Nhóm:** Kiểm thử tích hợp (Backend + Frontend) <br> - **Thực hành:** <br>&emsp; + Hỗ trợ team frontend trong việc tích hợp cuối cùng <br>&emsp; + Sửa các lỗi (bug) phút chót | 20/11/2025 | 20/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Thuyết trình Dự án cuối khóa:** <br>&emsp; + Chuẩn bị sơ đồ kiến trúc (tập trung vào Backend) <br>&emsp; + Demo chức năng API và quy trình CI/CD | 21/11/2025 | 21/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
+### Kết quả đạt được trong Tuần 12:
 
-### Kết quả đạt được tuần 12:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Triển khai thành công backend Web bán trang sức lên môi trường production.
+* Cấu hình CloudFront CDN để giảm độ trễ cho người dùng toàn cầu khi truy cập hình ảnh sản phẩm.
+* Xác thực độ tin cậy của hệ thống thông qua kiểm thử tải và kiểm tra khả năng Auto Scaling.
+* Hoàn tất việc tích hợp với frontend và bàn giao một dự án thương mại điện tử hoạt động đầy đủ.

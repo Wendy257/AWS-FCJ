@@ -1,59 +1,29 @@
 ---
-title: "Worklog Tuần 10"
- 
-weight: 2
+title: "Week 10 Worklog"
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 10:
 
-### Mục tiêu tuần 10:
+* **Cơ sở hạ tầng dưới dạng mã (IaC):** Học cách cấp phát tài nguyên bằng mã (CloudFormation).
+* **Quản lý cấu hình:** Sử dụng AWS Systems Manager (Parameter Store) để quản lý các bí mật cấu hình.
+* **Xác thực Cognito:** Triển khai luồng đăng ký và đăng nhập cho ứng dụng web.
+* **Phát triển Backend dự án:** Bắt đầu triển khai core API cho Cửa hàng Trang sức.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 1 | - Cơ bản về AWS CloudFormation <br> - **Thực hành:** <br>&emsp; + Viết template YAML để khởi chạy VPC và Database cho dự án | 03/11/2025 | 03/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - AWS Systems Manager (Parameter Store) <br> - **Thực hành:** <br>&emsp; + Lưu trữ thông tin đăng nhập database an toàn <br>&emsp; + Lấy bí mật trong code backend thông qua lập trình | 04/11/2025 | 04/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Amazon Cognito (User Pools) <br> - **Thực hành:** <br>&emsp; + Tạo User Pool cho Khách hàng mua trang sức <br>&emsp; + Triển khai các API endpoint Đăng ký/Đăng nhập | 05/11/2025 | 05/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - **Dự án Nhóm (Backend):** Thiết kế Database <br> - **Thực hành:** <br>&emsp; + Thiết kế Schema cho 'Sản phẩm' và 'Danh mục' <br>&emsp; + Cấp phát bảng RDS hoặc DynamoDB qua CloudFormation | 06/11/2025 | 06/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Dự án Nhóm (Backend):** Product API <br> - **Thực hành:** <br>&emsp; + Phát triển các API CRUD cho Sản phẩm Trang sức (GET/POST /products) <br>&emsp; + Kiểm thử với Postman | 07/11/2025 | 07/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Kết quả đạt được trong Tuần 10:
 
-
-### Kết quả đạt được tuần 10:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Cấp phát cơ sở hạ tầng nền tảng cho dự án (Mạng + DB) bằng CloudFormation templates.
+* Bảo mật cấu hình backend bằng Systems Manager Parameter Store thay vì fix cứng trong code.
+* Triển khai xác thực người dùng an toàn bằng Amazon Cognito cho ứng dụng Cửa hàng Trang sức.
+* Bàn giao các API "Danh mục sản phẩm" ban đầu cho team Frontend sử dụng.
