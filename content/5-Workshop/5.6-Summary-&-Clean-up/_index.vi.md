@@ -10,7 +10,7 @@ pre: " <b> 5.6. </b> "
 Chúng ta đã lập kế hoạch và xác định phạm vi cho AWS Jewelry Web như một hệ thống thương mại điện tử an toàn, chú trọng chi phí:
 
 - **Frontend**: React trên S3 + CloudFront với ACM TLS và tên miền Route 53.
-- **Backend**: API Node.js trên Lightsail; DB trên Lightsail (MySQL/Postgres); Secrets Manager cho mật khẩu DB/tên bucket.
+- **Backend**: API .net trên Lightsail; DB trên Lightsail (MySQL/Postgres); Secrets Manager cho mật khẩu DB/tên bucket.
 - **Danh tính**: Cognito User Pool cho đăng ký/đăng nhập và xác minh token API.
 - **Media**: S3 bucket riêng tư; tải lên thông qua Presigned PUT; CloudFront đọc các đối tượng.
 - **Khả năng quan sát**: CloudWatch structured logs cho API + các sự kiện kinh doanh; tùy chọn xuất sang S3/Athena để phân tích sâu hơn.

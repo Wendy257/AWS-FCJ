@@ -10,7 +10,7 @@ pre : " <b> 5.1. </b> "
 The AWS Jewelry Web project delivers a jewelry e-commerce site with:
 
 - React SPA hosted on **S3 + CloudFront** (ACM-managed HTTPS, Route 53 domain).
-- **Node.js API** on **AWS Lightsail** serving product/catalog/cart operations.
+- **.net API** on **AWS Lightsail** serving product/catalog/cart operations.
 - **Lightsail MySQL/Postgres** for transactional data.
 - **Amazon Cognito** for signup/login and API authorization.
 - **Amazon S3** for product image storage via presigned uploads.

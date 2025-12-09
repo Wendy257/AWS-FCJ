@@ -14,7 +14,7 @@ pre: " <b> 5. </b> "
 This workshop documents the AWS Jewelry Web project: a secure, cost-aware jewelry e-commerce stack using AWS managed services.
 
 - **Frontend**: React SPA on **S3 + CloudFront** with ACM TLS and Route 53 domain.
-- **Backend**: **Lightsail** instance running Node.js API; **Lightsail MySQL/Postgres** for data.
+- **Backend**: **Lightsail** instance running .net API; **Lightsail MySQL/Postgres** for data.
 - **Identity**: **Amazon Cognito** User Pool for signup/login and JWT verification on the API.
 - **Media**: Private **S3** bucket for product images; uploads via **presigned PUT**; CloudFront reads objects.
 - **Secrets & Observability**: **AWS Secrets Manager** for DB password and bucket config; **CloudWatch Logs** for API/business events.

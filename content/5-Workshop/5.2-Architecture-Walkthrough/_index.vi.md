@@ -22,7 +22,7 @@ pre: " <b> 5.2. </b> "
 
 ## 5.2.2 API & Dữ liệu
 
-- **Lightsail API (Node.js)**: Thực hiện CRUD cho sản phẩm, giỏ hàng và điều phối việc tải lên hình ảnh. Chạy với quyền IAM role để đọc Secrets Manager.
+- **Lightsail API (.net)**: Thực hiện CRUD cho sản phẩm, giỏ hàng và điều phối việc tải lên hình ảnh. Chạy với quyền IAM role để đọc Secrets Manager.
 - **Lightsail DB (MySQL/Postgres)**: Lưu trữ danh mục, người dùng, giỏ hàng/đơn đặt hàng. Riêng tư (Private) với instance API.
 - **Secrets Manager**: Chứa mật khẩu DB và tên bucket (`DB_PASSWORD`, `APP_CONFIG`). API truy xuất khi khởi động/sử dụng lần đầu.
 - **CloudWatch Logs**: Thu thập nhật ký truy cập/lỗi API; làm cơ sở cho các truy vấn vận hành và phân tích nhẹ.

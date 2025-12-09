@@ -10,7 +10,7 @@ pre: " <b> 5.6. </b> "
 We planned and scoped AWS Jewelry Web as a secure, cost-aware e-commerce stack:
 
 - **Frontend**: React on S3 + CloudFront with ACM TLS and Route 53 domain.
-- **Backend**: Node.js API on Lightsail; DB on Lightsail (MySQL/Postgres); Secrets Manager for DB password/bucket name.
+- **Backend**: .net API on Lightsail; DB on Lightsail (MySQL/Postgres); Secrets Manager for DB password/bucket name.
 - **Identity**: Cognito User Pool for signup/login and API token verification.
 - **Media**: S3 private bucket; uploads via presigned PUT; CloudFront reads objects.
 - **Observability**: CloudWatch structured logs for API + business events; optional export to S3/Athena for deeper analysis.

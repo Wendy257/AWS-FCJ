@@ -22,7 +22,7 @@ Why it matters: Fast global delivery (<2s target), standard SSL, and auth tokens
 
 ## 5.2.2 API & Data
 
-- **Lightsail API (Node.js)**: CRUD for products, cart, and image upload orchestration. Runs with IAM role permission to read Secrets Manager.
+- **Lightsail API (.net)**: CRUD for products, cart, and image upload orchestration. Runs with IAM role permission to read Secrets Manager.
 - **Lightsail DB (MySQL/Postgres)**: Stores catalog, users, cart/orders. Private to the API instance.
 - **Secrets Manager**: Holds DB password and bucket name (`DB_PASSWORD`, `APP_CONFIG`). API fetches at startup/first use.
 - **CloudWatch Logs**: Captures API access/error logs; base for operational and light analytics queries.

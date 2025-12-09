@@ -14,7 +14,7 @@ pre: " <b> 5. </b> "
 Workshop này ghi lại dự án AWS Jewelry Web: một hệ thống thương mại điện tử trang sức an toàn, chú trọng chi phí, sử dụng các dịch vụ được quản lý của AWS.
 
 - **Frontend**: Ứng dụng một trang React (React SPA) trên **S3 + CloudFront** với ACM TLS và tên miền Route 53.
-- **Backend**: Instance **Lightsail** chạy API Node.js; **Lightsail MySQL/Postgres** cho dữ liệu.
+- **Backend**: Instance **Lightsail** chạy API .net; **Lightsail MySQL/Postgres** cho dữ liệu.
 - **Danh tính**: **Amazon Cognito** User Pool cho đăng ký/đăng nhập và xác minh JWT trên API.
 - **Media**: S3 bucket **riêng tư** cho hình ảnh sản phẩm; tải lên qua **Presigned PUT**; CloudFront đọc các đối tượng.
 - **Bí mật & Khả năng quan sát**: **AWS Secrets Manager** cho mật khẩu DB và cấu hình bucket; **CloudWatch Logs** cho các sự kiện API/kinh doanh.
