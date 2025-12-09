@@ -93,7 +93,7 @@ Dự án Web Trang sức AWS bao gồm việc phát triển một Nền tảng T
 
 ## 1.**SƠ ĐỒ KIẾN TRÚC KỸ THUẬT**
 
-![Kiến trúc](/images/imageworkshop.png)
+![Kiến trúc](/images/architecture.drawio.png)
 
 ## 2.**KẾ HOẠCH KỸ THUẬT**
 
